@@ -17,7 +17,7 @@ parser.add_argument('--pure', dest='pure', help='Pure Response URL (Default: Fal
 parser.add_argument('--timeout', dest='timeout', help='Timeout For Requests (Default: 4)', default = 4)
 parser.add_argument('--wordlist', dest='wordlist', help='Wordlist for fuzzing (Default: wordlist/wordlist.txt)', default='wordlist/wordlist.txt')
 parser.add_argument('--list', dest='list', help='List of URLs (Default: input.txt)', default='input.txt')
-parser.add_argument('--status', dest='list', help='List of URLs (Default: 200)', default = 200)
+parser.add_argument('--status', dest='status', help='List of URLs (Default: 200)', default = 200)
 
 
 args = parser.parse_args()
