@@ -14,9 +14,10 @@ urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 parser = argparse.ArgumentParser()
 parser.add_argument('--threads', dest='threads', help='Number of threads (Default: 50)', default=50)
 parser.add_argument('--pure', dest='pure', help='Pure Response URL (Default: False)', default = False)
-parser.add_argument('--timeout', dest='timeout', help='Timeout For Requests (Default: 4)', default=4)
+parser.add_argument('--timeout', dest='timeout', help='Timeout For Requests (Default: 4)', default = 4)
 parser.add_argument('--wordlist', dest='wordlist', help='Wordlist for fuzzing (Default: wordlist/wordlist.txt)', default='wordlist/wordlist.txt')
 parser.add_argument('--list', dest='list', help='List of URLs (Default: input.txt)', default='input.txt')
+parser.add_argument('--status', dest='list', help='List of URLs (Default: 200)', default = 200)
 
 
 args = parser.parse_args()
@@ -34,7 +35,7 @@ def make_request(full_url):
         response = requests.get(full_url, timeout= args.timeout, verify=False)
         response_size = int(response.headers.get("content-length", 0))
         if response_size != 0:
-            if response.status_code == 200:
+            if response.status_code == args.status:
                 f.write(str(response_size) + '-'+full_url + '\n')
 
     except requests.exceptions.Timeout:
@@ -59,12 +60,12 @@ for url in urls:
 sorted_urls = sorted(unique_urls)
 
 
-with open('seperated.txt', 'w') as f:
+with open('separated.txt', 'w') as f:
     for sorted_url in sorted_urls:
         f.write(sorted_url + '\n')
 
 
-with open('seperated.txt', 'r') as f:
+with open('separated.txt', 'r') as f:
     base_url = f.readline().strip()
     f.close()
 
@@ -72,7 +73,7 @@ with open('wordlist/wordlist.txt', 'r') as f:
     wordlist = [word.strip() for word in f.readlines()]
     f.close()
 
-with open('seperated.txt', 'r') as f:
+with open('separated.txt', 'r') as f:
     next(f)
     urls = [url.strip() for url in f.readlines()]
     f.close()
