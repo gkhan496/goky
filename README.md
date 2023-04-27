@@ -86,6 +86,7 @@ https://www-api.ibm.com/search/api/v1-1/ibmcom/appid/dw/responseFormat/send.php
 https://www-api.ibm.com/search/typeahead/send.php
 ```
 
+[![asciicast](https://asciinema.org/a/wuF9iuCQCNg5COnmlVJT9e1fN.svg)](https://asciinema.org/a/wuF9iuCQCNg5COnmlVJT9e1fN)
 
 
 
