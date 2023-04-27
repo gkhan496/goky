@@ -7,7 +7,7 @@ import ctypes
 import argparse
 
 
-#ctypes.windll.msvcrt._setmaxstdio(2048) for windows (f.open error)
+#ctypes.windll.msvcrt._setmaxstdio(2048) for windows
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
 
