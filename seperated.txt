@@ -1,0 +1,10 @@
+https://www-api.ibm.com/
+https://www-api.ibm.com/cookie-sync/
+https://www-api.ibm.com/search/
+https://www-api.ibm.com/search/api/
+https://www-api.ibm.com/search/api/v1-1/
+https://www-api.ibm.com/search/api/v1-1/ibmcom/
+https://www-api.ibm.com/search/api/v1-1/ibmcom/appid/
+https://www-api.ibm.com/search/api/v1-1/ibmcom/appid/dw/
+https://www-api.ibm.com/search/api/v1-1/ibmcom/appid/dw/responseFormat/
+https://www-api.ibm.com/search/typeahead/
